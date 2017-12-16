@@ -14,6 +14,7 @@ function vatCalculator(x) {
     sum += element;
   });
 
+  
   console.log("sum = ", sum);
   let vat = sum * 20 / 100;
 
