@@ -14,7 +14,6 @@ function vatCalculator(x) {
     sum += element;
   });
 
-
   console.log("sum = ", sum);
   let vat = sum * 20 / 100;
 
@@ -25,7 +24,6 @@ function vatCalculator(x) {
 }
 
 //3.	Letter Occurrences in String
-
 
 function countStrings(text, letter) {
 
@@ -100,7 +98,6 @@ function calcArea(w, h, W, H) {
 
 function nextDay(year, month, day) {
 
- 
   var today = new Date(year,month-1,day);
   var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
 
