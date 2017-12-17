@@ -101,6 +101,16 @@ function calcArea(w, h, W, H) {
 
 function nextDay(year, month, day) {
 
+ 
+  var today = new Date(year,month-1,day);
+  var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+
+  var day = tomorrow.getDate();
+  var month = tomorrow.getMonth();
+  var year = tomorrow.getFullYear();
+
+  console.log(`${year}-${month+1}-${day}`);
+  
 }
 
 
@@ -124,7 +134,7 @@ function calcDistance(x1, y1, x2, y2) {
 }
 
 
-console.log(`Hi, ${2+5} , ${"Hi"}`)
+
 
 //9.  Blink 
 
