@@ -96,7 +96,6 @@ function calcArea(w, h, W, H) {
 
 }
 
-
 //7.	Next Day
 
 function nextDay(year, month, day) {
@@ -112,7 +111,6 @@ function nextDay(year, month, day) {
   console.log(`${year}-${month+1}-${day}`);
   
 }
-
 
 //8.	Distance between Points
 
@@ -133,9 +131,6 @@ function calcDistance(x1, y1, x2, y2) {
   return (distance);
 }
 
-
-
-
 //9.  Blink 
 
 function blink() {
@@ -147,3 +142,4 @@ function blink() {
     div.style.visibility = 'hidden'
   }
 }
+
