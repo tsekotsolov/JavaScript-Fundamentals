@@ -1,3 +1,5 @@
+'use strict';
+
 // 1.	Sum 3 Numbers
 
 function sumOfNumbers(a, b, c) {
