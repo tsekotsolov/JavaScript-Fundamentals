@@ -16,7 +16,7 @@ function vatCalculator(x) {
     sum += element;
   });
 
-
+  
   console.log("sum = ", sum);
   let vat = sum * 20 / 100;
 
@@ -27,7 +27,6 @@ function vatCalculator(x) {
 }
 
 //3.	Letter Occurrences in String
-
 
 function countStrings(text, letter) {
 
@@ -98,12 +97,10 @@ function calcArea(w, h, W, H) {
 
 }
 
-
 //7.	Next Day
 
 function nextDay(year, month, day) {
 
- 
   var today = new Date(year,month-1,day);
   var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
 
@@ -114,7 +111,6 @@ function nextDay(year, month, day) {
   console.log(`${year}-${month+1}-${day}`);
   
 }
-
 
 //8.	Distance between Points
 
@@ -135,9 +131,6 @@ function calcDistance(x1, y1, x2, y2) {
   return (distance);
 }
 
-
-
-
 //9.  Blink 
 
 function blink() {
@@ -149,3 +142,4 @@ function blink() {
     div.style.visibility = 'hidden'
   }
 }
+
