@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/Operators And Logic Flow\\operators.js"
+      "program": "${workspaceFolder}/Operators And Logic Flow\\Lab\\operators.js"
     }
   ]
 }
