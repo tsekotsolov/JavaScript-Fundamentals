@@ -47,3 +47,5 @@ function leapYearCheck(year) {
     }
 
 }
+
+// 4.	Circle Area
