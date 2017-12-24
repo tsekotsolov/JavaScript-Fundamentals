@@ -77,10 +77,12 @@ function calcCone(radius, height) {
 
     let baseSurface = Math.PI * (radius * radius);
 
-    let surfaceArea = lateralSurace + baseSurface;
+    let surfaceArea = lateralSurface + baseSurface;
 
-    console.log(`volume = ${volume.toFixed(4)}`);
-    console.log(`area = ${surfaceArea.toFixed(4)}`);
+    volume = `volume = ${volume.toFixed(4)}\n`;
+    surfaceArea=`area = ${surfaceArea.toFixed(4)}`;
+
+    return volume+surfaceArea;
 }
 
 //  7. Odd / Even
