@@ -73,7 +73,7 @@ function calcCone(radius, height) {
 
     let volume = Math.pow(radius, 2) * height / 3 * Math.PI;
 
-    let lateralSurace = Math.PI * radius * Math.sqrt(radius * radius + height * height, 2);
+    let lateralSurface = Math.PI * radius * Math.sqrt(radius * radius + height * height, 2);
 
     let baseSurface = Math.PI * (radius * radius);
 
