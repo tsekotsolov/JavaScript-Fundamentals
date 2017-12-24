@@ -14,7 +14,7 @@ function findRequiredBoxes(numberOfBottles, boxCapacity) {
     return Math.ceil(boxesNeeded)
 }
 
-let result = findRequiredBoxes(15,6);
+let result = findRequiredBoxes(15, 6);
 console.log(result);
 
 
@@ -49,11 +49,38 @@ function leapYearCheck(year) {
 }
 
 // 4.	Circle Area
-function calcCircleArea(radius){
+function calcCircleArea(radius) {
 
-    let area = Math.PI*Math.pow(radius,2);
+    let area = Math.PI * Math.pow(radius, 2);
 
     console.log(area);
-    console.log( area.toFixed(2));
+    console.log(area.toFixed(2));
 }
 
+// 5. Triangle Area
+
+function triangleArea(a, b, c) {
+    let p = (a + b + c) / 2;
+
+    let area = Math.sqrt(p * (p - a) * (p - b) * (p - c), 2);
+
+    return area;
+}
+
+//  6. Cone
+
+function calcCone(radius, height) {
+
+    let volume = Math.pow(radius, 2) * height / 3 * Math.PI;
+
+    let lateralSurace = Math.PI * radius * Math.sqrt(radius * radius + height * height, 2);
+
+    let baseSurface = Math.PI * (radius * radius);
+
+    let surfaceArea = lateralSurace + baseSurface;
+
+    console.log(`volume = ${volume.toFixed(4)}`);
+    console.log(`area = ${surfaceArea.toFixed(4)}`);
+}
+
+//  7. Odd / Even
