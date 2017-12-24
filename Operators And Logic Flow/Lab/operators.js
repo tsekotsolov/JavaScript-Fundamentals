@@ -14,10 +14,6 @@ function findRequiredBoxes(numberOfBottles, boxCapacity) {
     return Math.ceil(boxesNeeded)
 }
 
-let result = findRequiredBoxes(15, 6);
-console.log(result);
-
-
 //3. Leap Year
 
 function leapYearCheck(year) {
@@ -80,9 +76,23 @@ function calcCone(radius, height) {
     let surfaceArea = lateralSurface + baseSurface;
 
     volume = `volume = ${volume.toFixed(4)}\n`;
-    surfaceArea=`area = ${surfaceArea.toFixed(4)}`;
+    surfaceArea = `area = ${surfaceArea.toFixed(4)}`;
 
-    return volume+surfaceArea;
+    return volume + surfaceArea;
 }
 
 //  7. Odd / Even
+
+//  11. Binary Logarithm
+
+
+function logarithm(x){
+    
+for (let index = 0; index < x.length; index++) {
+    
+    console.log(Math.log2(x[index])); 
+}
+
+}
+
+
