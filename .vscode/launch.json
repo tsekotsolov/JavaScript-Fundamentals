@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/Operators And Logic Flow\\Lab\\operators.js"
+      "program": "${workspaceFolder}/Operators And Logic Flow\\Exercises\\P03_Distance over Time.js"
     }
   ]
 }
