@@ -9,4 +9,6 @@ function calcDistance(arr){
 
     return diff;
 }
+console.log("12");
+console.log(15);
 
