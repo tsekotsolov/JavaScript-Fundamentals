@@ -128,7 +128,64 @@ function fruitOrVeggie(word) {
     }
 }
 
+//  9. Colorful Numbers
 
+function colorNumbers(x) {
+
+    let html = "<ul>\n";
+
+    for (let index = 1; index <= x; index++) {
+
+        if (index % 2 != 0) {
+            html += `<li><span style='color:green'>${index}</span></li>\n`;
+        } else {
+            html += `<li><span style='color:blue'>${index}</span></li>\n`;
+        }
+
+    }
+
+    html += "</ul>";
+
+    return (html);
+}
+
+
+// 10. Chessboard
+
+function chessBoard(n) {
+   
+    let html = '<div class="chessboard">\n';
+
+    for (let i = 1; i <= n; i++) {
+
+        html += '<div>\n';
+
+        for (let j = 1; j <= n; j++) {
+            if (i % 2 != 0) {
+                if (j % 2 != 0) {
+                    html += `<span class="black"></span>\n`
+                } else {
+                    html += `<span class="white"></span>\n`
+                }
+
+            } else {
+                if (j % 2 != 0) {
+                    html += `<span class="white"></span>\n`
+                } else {
+                    html += `<span class="black"></span>\n`
+                }
+            }
+
+        }
+
+        html += '</div>\n';
+    }
+
+    html += '</div>\n'
+
+    return (html);
+}
+ 
 //  11. Binary Logarithm
 
 

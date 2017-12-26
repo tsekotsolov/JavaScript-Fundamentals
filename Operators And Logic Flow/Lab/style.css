@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: lightslategray;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.chessboard {
+    display: flex;
+    justify-content: center;
+    margin-top:50px;
+}
+
+.black {
+    background: black;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.white {
+    background: white;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
