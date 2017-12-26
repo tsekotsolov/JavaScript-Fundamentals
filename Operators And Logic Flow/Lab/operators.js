@@ -1,4 +1,5 @@
 'use strict';
+
 //1.	Multiply Numbers
 
 function multiply(x, y) {
@@ -45,6 +46,7 @@ function leapYearCheck(year) {
 }
 
 // 4.	Circle Area
+
 function calcCircleArea(radius) {
 
     let area = Math.PI * Math.pow(radius, 2);
@@ -83,16 +85,82 @@ function calcCone(radius, height) {
 
 //  7. Odd / Even
 
+function oddOrEven(x) {
+
+    if (x - Math.trunc(x) != 0) {
+        console.log("invalid");
+    } else if (x % 2 === 0) {
+        console.log("even");
+    } else {
+        console.log("odd");
+    }
+
+}
+
+//8. Fruit or Vegetable
+
+function fruitOrVeggie(word) {
+
+    switch (word) {
+        case 'banana':
+        case 'apple':
+        case 'kiwi':
+        case 'lemon':
+        case 'grapes':
+        case 'peach':
+        case 'cherry':
+            console.log("fruit");
+            break;
+
+        case 'tomato':
+        case 'cucumber':
+        case 'kiwi':
+        case 'pepper':
+        case 'onion':
+        case 'garlic':
+        case 'parsley':
+            console.log("vegetable");
+            break;
+
+        default:
+            console.log("unknown");
+            break;
+    }
+}
+
+
 //  11. Binary Logarithm
 
 
-function logarithm(x){
-    
-for (let index = 0; index < x.length; index++) {
-    
-    console.log(Math.log2(x[index])); 
-}
+function logarithm(x) {
+
+    for (let index = 0; index < x.length; index++) {
+
+        console.log(Math.log2(x[index]));
+    }
 
 }
 
+//  12. Prime Number Checker
 
+function primeChecker(x) {
+
+    let isPrime = true;
+
+    if (x > 1) {
+
+        for (let index = 2; index <= Math.ceil(Math.sqrt(x)); index++) {
+
+            if (x % index === 0 && x!=index) {
+                isPrime = false;
+                break;
+            }
+        }
+
+    } else {
+        isPrime = false;
+    }
+
+    console.log(isPrime);
+
+}
