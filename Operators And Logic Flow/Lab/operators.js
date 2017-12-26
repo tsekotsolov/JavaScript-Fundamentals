@@ -151,7 +151,7 @@ function primeChecker(x) {
 
         for (let index = 2; index <= Math.ceil(Math.sqrt(x)); index++) {
 
-            if (x % index === 0 && x!=index) {
+            if (x % index === 0 && x != index) {
                 isPrime = false;
                 break;
             }
