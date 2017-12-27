@@ -1,16 +1,17 @@
 function drawFigure(n) {
 
-    let line = "+" + '-'.repeat(n - 2) + "+" + '-'.repeat(n - 2) + "+\n";
-    let midline = "|" + ' '.repeat(n - 2) + "|" + ' '.repeat(n - 2) + "|\n";
+    let plusLine = "+" + '-'.repeat(n - 2) + "+" + '-'.repeat(n - 2) + "+\n";
+    let pipeLine = "|" + ' '.repeat(n - 2) + "|" + ' '.repeat(n - 2) + "|\n";
 
-    let result = line;
+    let result = plusLine;
 
     if (n % 2 != 0) {
         for (let i = 1; i <= n - 2; i++) {
             if (i != Math.ceil((n - 2) / 2)) {
-                result += midline
+                result += pipeLine
+        
             } else {
-                result += line;
+                result += plusLine;
             }
 
         }
@@ -18,15 +19,16 @@ function drawFigure(n) {
         for (let i = 1; i <= n - 1 - 2; i++) {
 
             if (i != (n - 2) / 2) {
-                result += midline
+                result += pipeLine
+        
             } else {
-                result += line;
+                result += plusLine;
             }
         }
     }
 
     if (n != 2) {
-        result += line;
+        result += plusLine;
     }
 
     return result
