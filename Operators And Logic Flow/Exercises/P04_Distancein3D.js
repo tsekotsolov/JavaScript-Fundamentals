@@ -16,6 +16,7 @@ function calcDistance(arr) {
 
     let distance = Math.sqrt((pointA.x - pointB.x) ** 2 + (pointA.y - pointB.y) ** 2 + (pointA.z - pointB.z) ** 2)
 
+    
     return(distance);
 
 }
