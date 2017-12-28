@@ -9,7 +9,7 @@ function qEquation(a, b, c) {
 
         x = -b / (2 * a)
         return x;
-    } else if (d > 0) {
+    } else {
 
         x1 = (-b + Math.sqrt(d)) / (2 * a);
         x2 = (-b - Math.sqrt(d)) / (2 * a);
