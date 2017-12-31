@@ -14,5 +14,3 @@ function triangleOfStars(count) {
 
 }
 
-console.log(triangleOfStars(5));
-5
