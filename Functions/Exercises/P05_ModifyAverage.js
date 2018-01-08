@@ -1,9 +1,8 @@
 function modifyAverage(number) {
 
-  
   let avgSum = checkAverage(number);
 
-  while (avgSum < 5) {
+  while (avgSum <= 5) {
     number = number + "9";
 
     avgSum = checkAverage(number);
@@ -18,7 +17,5 @@ function modifyAverage(number) {
   }
 
   console.log(number);
-  
-}
 
-modifyAverage(25)
+}
