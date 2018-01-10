@@ -30,7 +30,6 @@ function radiocrystal(input = []) {
       console.log(`Cut x${cutCounter}`);
       crystal = tansportAndWash(crystal);
       console.log('Transporting and washing');
-
     }
 
 
@@ -53,8 +52,7 @@ function radiocrystal(input = []) {
     }
 
     if (grindCounter != 0) {
-      console.log(`Gring x${grindCounter}`);
-      crystal = tansportAndWash(crystal);
+      console.log(`Grind x${grindCounter}`);
       console.log('Transporting and washing');
     }
 
@@ -64,10 +62,9 @@ function radiocrystal(input = []) {
       crystal = etch(crystal);
       etchCounter++;
     }
-    
+
     if (etchCounter!=0) {
       console.log(`Etch x${etchCounter}`);
-      crystal = tansportAndWash(crystal);
       console.log('Transporting and washing');
     }
 
@@ -83,5 +80,3 @@ function radiocrystal(input = []) {
   }
 
 }
-
-radiocrystal([1000, 4000,8100])
