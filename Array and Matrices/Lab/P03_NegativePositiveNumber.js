@@ -13,4 +13,3 @@ function negativePoditiveNumbers(arr = []) {
   console.log(resultArr);
 }
 
-negativePoditiveNumbers([3, -2, 0, -1]);
