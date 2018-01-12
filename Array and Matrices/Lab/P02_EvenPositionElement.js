@@ -11,8 +11,6 @@ function evenPositionElement(arr = []) {
   console.log(result.trim());
 }
 
-evenPositionElement(['20', '30', '40']);
-
 //Solution 2
 
 function evenElement(arr=[]){
