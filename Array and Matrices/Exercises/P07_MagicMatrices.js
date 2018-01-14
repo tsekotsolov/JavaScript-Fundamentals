@@ -7,6 +7,8 @@ function magicMatrices(matrix) {
     if (sum != matrix[i].reduce((a, b) => a + b)) {
       
       isMagic = false;
+      console.log(isMagic);
+      return;
       
     }
   }
@@ -20,6 +22,8 @@ function magicMatrices(matrix) {
     if (sumCol != sum) {
       
       isMagic = false;
+      console.log(isMagic);
+      return;
 
     }
   }
