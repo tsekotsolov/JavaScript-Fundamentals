@@ -1,10 +1,10 @@
-function generateMatrix(n,z) {
-  var total = n * z;
+function generateMatrix(n,n) {
+  var total = n * n;
   var result = [];
 
   for (var i = 0; i < n; i++) {
     var rs = [];
-    for (var j = 0; j < z; j++) {
+    for (var j = 0; j < n; j++) {
       rs.push(0);
     }
     result.push(rs);
