@@ -13,7 +13,7 @@ function expedition(primary, secondary = [], cordinates, startPoint) {
   let [row, col] = startPoint;
 
   while (true) {
-
+      
 
   }
 
