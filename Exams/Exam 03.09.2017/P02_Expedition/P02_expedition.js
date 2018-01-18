@@ -10,32 +10,30 @@ function expedition(primary, secondary = [], cordinates, startPoint) {
   }
   countsteps = 0;
 
-  let [row,col] = startPoint;
-  while (true) {
-   
+  let [row, col] = startPoint;
 
-      if (primary[row][col] ) {
-        
-      }
+  while (true) {
+
+
   }
- 
+
   function checkEnd(point = [], primary) {
 
     let [pointRow, pointCol] = point;
 
     if (pointCol === 0 && (pointRow > 0 || pointRow < primary.length - 1)) {
-        return 'Left';
-    } else if (pointCol === primary[0].length-1 && (pointRow > 0 || pointRow <= primary.length - 1)) {
-        return 'Right';
+      return 'Left';
+    } else if (pointCol === primary[0].length - 1 && (pointRow > 0 || pointRow <= primary.length - 1)) {
+      return 'Right';
     } else if (pointRow === 0 && (pointCol > 0 || pointCol < primary[0].length - 1)) {
-        return 'Top';
+      return 'Top';
     } else if (pointRow === primary.length - 1 && (pointCol > 0 || pointCol < primary[0].length - 1)) {
-        return 'Bottom';
+      return 'Bottom';
     } else {
-        return false;
+      return false;
     }
 
-}
+  }
 
   function overlay(startRow, startCol, primary, secondary) {
     let countRow = 0;
