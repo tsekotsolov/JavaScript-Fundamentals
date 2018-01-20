@@ -1,4 +1,4 @@
-function emploeeData(input = []) {
+function employeeData(input = []) {
 
   const regex = /^([A-Z][a-zA-Z]*)\s-\s([1-9][0-9]*)\s-\s([A-Za-z0-9\- ]+$)/gm;
 
