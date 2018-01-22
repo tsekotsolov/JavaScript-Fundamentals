@@ -1,16 +1,24 @@
 function secretData(input = []) {
-  const nameRegex = /\*[A-Z][a-z]+\b/gm;
-  const numberRegex = /\+[\d-]{10}\b/gm;
-  const IdRegex = /\![A-za-z0-9]+\b/gm;
-  const baseRegex = /\_[A-Za-z0-9]+\b/gm;
+
+  let nameRegex = /\*[A-Z][A-Za-z]*(?=\s|\t|$)/g
+  let numberRegex = /\+[0-9-]{10}(?=\s|\t|$)/g
+  let IdRegex = /![a-zA-Z0-9]+(?=\s|\t|$)/g
+  let baseRegex = /_[0-9A-Za-z]+(?=\s|$)/g
 
 
-
+  for (const row of input) {
+    console.log(
+      row.replace(nameRegex, x => '|'.repeat(x.length))
+      .replace(numberRegex, x => '|'.repeat(x.length))
+      .replace(baseRegex, x => '|'.repeat(x.length))
+      .replace(IdRegex, x => '|'.repeat(x.length))
+    )
+  }
 
 }
 
 secretData([
-  'Agent *Ivankov was in the room when it all happened.',
+  'Agent *Ivankov was in *Ivankov the room when it all happened.',
   'The person in the room was heavily armed.',
   'Agent *Ivankov had to act quick in order.',
   'He picked up his phone and called some unknown number.',
