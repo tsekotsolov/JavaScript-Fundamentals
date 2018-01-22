@@ -2,7 +2,7 @@ function findOcc(text = new String(), word = new String()) {
 
   word = '\\b' + word + '\\b'
   let result = [];
-  let regex = new RegExp(word, "gmi");;
+  let regex = new RegExp(word, "gmi");
 
   while (match = regex.exec(text)) {
     result.push(match);
