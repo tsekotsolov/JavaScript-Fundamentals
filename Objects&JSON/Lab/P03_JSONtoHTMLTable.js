@@ -23,8 +23,6 @@ function JSONtoHTML(input = []) {
 
 result+='</table>'
 
-
-
   console.log(result);
 
   function htmlEscape(data) {
