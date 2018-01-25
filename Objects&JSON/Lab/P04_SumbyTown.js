@@ -5,11 +5,11 @@ function sumByTown(input = []) {
   for (let i = 0; i < input.length; i += 2) {
 
     if (!result.hasOwnProperty(input[i])) {
-      result[input[i]]=0;
+      result[input[i]] = 0;
     }
 
-    result[input[i]] +=Number( input[i + 1]);
-
+    result[input[i]] += Number(input[i + 1]);
+    
   }
   console.log(JSON.stringify(result));
 }

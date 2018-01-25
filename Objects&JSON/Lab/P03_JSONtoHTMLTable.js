@@ -1,4 +1,6 @@
 function JSONtoHTML(input = []) {
+
+
   let myJSON = JSON.parse(input)
 
   let result = '<table>\n';
@@ -15,7 +17,9 @@ function JSONtoHTML(input = []) {
     result += ' <tr>'
 
     for (const value of Object.values(myJSON[i])) {
-      result += `<td>${htmlEscape(String(value))}</td>`;
+
+      result += `<td>${htmlEscape(String (value))}</td>`;
+      
     }
 
     result += '</tr>\n'
