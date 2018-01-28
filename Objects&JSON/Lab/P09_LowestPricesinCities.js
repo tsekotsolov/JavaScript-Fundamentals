@@ -27,7 +27,6 @@ function lowestPrice(input = []) {
   }
 
 }
-
 lowestPrice([
   'Sample Town | Sample Product | 1000',
   'Sample Town | Orange | 1',
