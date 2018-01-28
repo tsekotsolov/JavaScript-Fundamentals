@@ -5,7 +5,6 @@ function heroicInventory(input = []) {
     for (let i = 0; i < input.length; i++) {
         let [name, level, items] = input[i].split(' / ');
 
-
         let itemList = [];
 
         if (items!=undefined) {
