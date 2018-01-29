@@ -16,7 +16,35 @@ function sysComponents(input = []) {
     register.get(name).get(component).add(subComponent);
 
   }
-  console.log(register);
+  
+  register = new Map([...register].sort((x, y) =>{ 
+    
+    if ([...y[1]].length===[...x[1]].length) {
+      
+      if (x[0] > y[0]) {
+        return 1
+      }
+      if (x[0] < y[0]) {
+        return -1
+      }
+      return 0
+    }
+    return [...x[1]].length > [...y[1]].length ? -1 : 1
+  }));
+
+  for (const [component, subComponents] of register) {
+    register.set(component, new Map([...subComponents].sort((x, y) => [...y[1]].length - [...x[1]].length)))
+  }
+  
+  for (const [system, components] of register) {
+    console.log(system)
+    for (const [component, subComponents] of components) {
+      console.log(`|||${component}`)
+      for (const subComponent of subComponents) {
+        console.log(`||||||${subComponent}`)
+      }
+    }
+  }
 
 }
 
