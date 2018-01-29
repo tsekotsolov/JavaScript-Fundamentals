@@ -5,6 +5,7 @@ let text = 'o u%&lu43t&^ftgv><nortH4276hrv756dcc, jytbu64574655k <>ThE sanDwich 
 
  let myKey = `${keyword}(.+?)${keyword}`
  
+ 
  let regex = new RegExp(myKey, "gmi");
 
  while (match = regex.exec(text)) {
