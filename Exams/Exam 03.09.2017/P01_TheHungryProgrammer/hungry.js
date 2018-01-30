@@ -54,7 +54,6 @@ function hungry(meals = [], commands = []) {
     } else if (currentCommand[0] === "End") {
       break;
     }
-
   }
 
   if (meals.length != 0) {
