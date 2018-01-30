@@ -1,7 +1,7 @@
 function lost(keyword, text) {
 
   keyword = `${keyword}(.+?)${keyword}`
-  let regexMessage = new RegExp(keyword, "gmis");
+  let regexMessage = new RegExp(keyword, "gmi");
   let message = extractMessage(regexMessage, text);
 
   const coordinatesPattern = /(north|east)\D*([0-9]{2})[^,]*,\D*([0-9]{6})/gim;
@@ -20,7 +20,7 @@ function lost(keyword, text) {
 
   console.log(northCoordinates);
   console.log(eastCoordinates);
-  console.log(message);
+  console.log(`Message: ${message}`);
 
   function extractMessage(regex, text) {
     let result = '';
