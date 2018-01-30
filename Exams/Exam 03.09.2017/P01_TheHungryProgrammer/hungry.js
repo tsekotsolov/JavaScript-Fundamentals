@@ -4,19 +4,15 @@ function hungry(meals = [], commands = []) {
 
   for (let i = 0; i < commands.length; i++) {
 
-
-
     let currentCommand = commands[i].split(' ');
-
 
     if (currentCommand[0] === 'Serve') {
 
       if (meals.length != 0) {
         console.log(`${meals[meals.length-1]} served!`);
+        meals.pop();
       }
 
-
-      meals.pop();
     } else if (currentCommand[0] === "Eat") {
 
       if (meals.length != 0) {
@@ -25,14 +21,11 @@ function hungry(meals = [], commands = []) {
         eatenMeals++;
       }
 
-
-
     } else if (currentCommand[0] === "Add") {
 
       if (currentCommand[1] != undefined) {
         meals.unshift(currentCommand[1]);
       }
-
 
     } else if (currentCommand[0] === "Shift") {
 
