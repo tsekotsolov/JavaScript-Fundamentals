@@ -1,4 +1,20 @@
-function rest(rooms=[],guests=[]){
+function rest(roomsInput=[],guestsInput=[]){
+
+  let rooms = new Map();
+
+  for (let i = 0; i < roomsInput.length; i++) {
+    let roomNumber = roomsInput[i].number;
+    let roomType = roomsInput[i].type;
+
+    if (roomType==='double-bedded') {
+      rooms.set(roomNumber,{roomType:'double-bedded',freeBeds:2})
+    }
+    else{
+      rooms.set(roomNumber,{roomType:'triple',freeBeds:3})
+    }
+  }
+
+  console.log(rooms);
 
 }
 
