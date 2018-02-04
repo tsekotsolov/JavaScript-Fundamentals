@@ -79,18 +79,16 @@ function rest(roomsInput = [], guestsInput = []) {
 
   for (const guest of orphantGuests) {
 
-    for (const [key,value] of rooms) {
+    for (const [key, value] of rooms) {
 
-      if (value.roomType==='triple'
-      && value.freeBeds!=0
-      &&value.guests[0].gender===guest.gender) {
-        
+      if (value.roomType === 'triple' &&
+        value.freeBeds != 0 &&
+        value.guests[0].gender === guest.gender) {
+
         value.guests.push(guest);
         value.freeBeds--;
         break;
-      }
-
-      else{
+      } else {
         teaHouse.push(guest);
         break;
       }
