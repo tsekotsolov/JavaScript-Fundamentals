@@ -49,7 +49,7 @@ function rest(roomsInput = [], guestsInput = []) {
     } else if (firstGuest.gender == secondGuest.gender) {
       for (const [key, value] of rooms) {
 
-        if (value.freeBeds >= 1 && value.roomType === 'triple') {
+        if (value.freeBeds > 0 && value.roomType === 'triple') {
 
           if (value.guests.length === 1 && value.guests[0].gender === firstGuest.gender) {
             value.guests.push(firstGuest);
@@ -86,7 +86,7 @@ function rest(roomsInput = [], guestsInput = []) {
         value.guests[0].gender === guest.gender) {
 
         value.guests.push(guest);
-        value.freeBeds--;
+        value.freeBeds=value.freeBeds-1;
         break;
       } else {
         teaHouse.push(guest);
@@ -113,12 +113,12 @@ function rest(roomsInput = [], guestsInput = []) {
     for (const guest of value.guests) {
 
       console.log(`--Guest Name: ${guest.name}`);
-      console.log(`--Guest Name: ${guest.age}`);
+      console.log(`--Guest Age: ${guest.age}`);
     }
     console.log(`Empty beds in the room: ${value.freeBeds}`);
   }
 
-  console.log(`Guests moved to the tea house:${teaHouse.length}`);
+  console.log(`Guests moved to the tea house: ${teaHouse.length}`);
 }
 
 rest([{
