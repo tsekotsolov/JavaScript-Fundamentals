@@ -1,7 +1,7 @@
 function rest(roomsInput = [], guestsInput = []) {
 
   let rooms = new Map();
-  let orphantGuests = [];
+  let orphantGuests = new Set();
   let teaHouse = [];
 
   for (let i = 0; i < roomsInput.length; i++) {
@@ -45,8 +45,8 @@ function rest(roomsInput = [], guestsInput = []) {
         } 
       }
       if (!isAccomodated) {
-        orphantGuests.push(firstGuest);
-          orphantGuests.push(secondGuest);
+        orphantGuests.add(firstGuest);
+          orphantGuests.add(secondGuest);
       }
 
     } else if (firstGuest.gender == secondGuest.gender) {
@@ -64,7 +64,7 @@ function rest(roomsInput = [], guestsInput = []) {
             value.guests.push(firstGuest);
             value.freeBeds = 0;
 
-            orphantGuests.push(secondGuest);
+            orphantGuests.add(secondGuest);
             break;
 
           } else if (value.guests.length === 0) {
@@ -77,8 +77,8 @@ function rest(roomsInput = [], guestsInput = []) {
           }
         }
         else{
-          orphantGuests.push(firstGuest);
-          orphantGuests.push(secondGuest);
+          orphantGuests.add(firstGuest);
+          orphantGuests.add(secondGuest);
           break;
       };
       }
@@ -117,16 +117,12 @@ let isAccomodated = false;
    
   }
 
-  rooms = new Map([...rooms].sort((a, b) => {
-    return a[0].localeCompare(b[0]);
 
-  }))
-
-  for (const [key, value] of rooms) {
+  for (const [key, value] of [...rooms].sort()) {
     console.log(`Room number: ${key}`);
 
     value.guests.sort((a, b) => {
-      return a.name.localeCompare(b.name);
+      return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
     });
 
     for (const guest of value.guests) {
