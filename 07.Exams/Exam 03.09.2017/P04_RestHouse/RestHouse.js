@@ -1,6 +1,7 @@
 function rest(roomsInput = [], guestsInput = []) {
 
   let rooms = new Map();
+  let orphantGuests = [];
   let teaHouse = [];
 
   for (let i = 0; i < roomsInput.length; i++) {
@@ -39,8 +40,8 @@ function rest(roomsInput = [], guestsInput = []) {
           break;
 
         } else {
-          teaHouse.push(firstGuest);
-          teaHouse.push(secondGuest);
+          orphantGuests.push(firstGuest);
+          orphantGuests.push(secondGuest);
           break;
         }
       }
@@ -60,7 +61,7 @@ function rest(roomsInput = [], guestsInput = []) {
             value.guests.push(firstGuest);
             value.freeBeds = 0;
 
-            teaHouse.push(secondGuest);
+            orphantGuests.push(secondGuest);
             break;
 
           } else if (value.guests.length === 0) {
@@ -72,27 +73,47 @@ function rest(roomsInput = [], guestsInput = []) {
 
           }
         }
+      }
+    }
+  }
 
+  for (const guest of orphantGuests) {
+
+    for (const [key,value] of rooms) {
+
+      if (value.roomType==='triple'
+      && value.freeBeds!=0
+      &&value.guests[0].gender===guest.gender) {
+        
+        value.guests.push(guest);
+        value.freeBeds--;
+        break;
+      }
+
+      else{
+        teaHouse.push(guest);
+        break;
       }
 
     }
 
   }
-  
-rooms = new Map([...rooms].sort((a,b)=>{
-return a[0].localeCompare(b[0]);
 
-}))
 
-  for (const [key,value] of rooms) {
+  rooms = new Map([...rooms].sort((a, b) => {
+    return a[0].localeCompare(b[0]);
+
+  }))
+
+  for (const [key, value] of rooms) {
     console.log(`Room number: ${key}`);
 
-    value.guests.sort((a,b)=>{
-     return a.name.localeCompare(b.name);
-   });
+    value.guests.sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
 
     for (const guest of value.guests) {
-      
+
       console.log(`--Guest Name: ${guest.name}`);
       console.log(`--Guest Name: ${guest.age}`);
     }
@@ -110,7 +131,7 @@ rest([{
     number: '311',
     type: 'triple'
   },
- 
+
 ], [{
     first: {
       name: 'Tanya Popova',
@@ -149,15 +170,68 @@ rest([{
   }
 ]);
 
-rest([ { number: '101A', type: 'double-bedded' },
-{ number: '104', type: 'triple' },
-{ number: '101B', type: 'double-bedded' },
-{ number: '102', type: 'triple' } ],
-[ { first: { name: 'Sushi & Chicken', gender: 'female', age: 15 },
-second: { name: 'Salisa Debelisa', gender: 'female', age: 25 } },
-{ first: { name: 'Daenerys Targaryen', gender: 'female', age: 20 },
-second: { name: 'Jeko Snejev', gender: 'male', age: 18 } },
-{ first: { name: 'Pesho Goshov', gender: 'male', age: 20 },
-second: { name: 'Gosho Peshov', gender: 'male', age: 18 } },
-{ first: { name: 'Conor McGregor', gender: 'male', age: 29 },
-second: { name: 'Floyd Mayweather', gender: 'male', age: 40 } } ]);
+rest([{
+    number: '101A',
+    type: 'double-bedded'
+  },
+  {
+    number: '104',
+    type: 'triple'
+  },
+  {
+    number: '101B',
+    type: 'double-bedded'
+  },
+  {
+    number: '102',
+    type: 'triple'
+  }
+], [{
+    first: {
+      name: 'Sushi & Chicken',
+      gender: 'female',
+      age: 15
+    },
+    second: {
+      name: 'Salisa Debelisa',
+      gender: 'female',
+      age: 25
+    }
+  },
+  {
+    first: {
+      name: 'Daenerys Targaryen',
+      gender: 'female',
+      age: 20
+    },
+    second: {
+      name: 'Jeko Snejev',
+      gender: 'male',
+      age: 18
+    }
+  },
+  {
+    first: {
+      name: 'Pesho Goshov',
+      gender: 'male',
+      age: 20
+    },
+    second: {
+      name: 'Gosho Peshov',
+      gender: 'male',
+      age: 18
+    }
+  },
+  {
+    first: {
+      name: 'Conor McGregor',
+      gender: 'male',
+      age: 29
+    },
+    second: {
+      name: 'Floyd Mayweather',
+      gender: 'male',
+      age: 40
+    }
+  }
+]);
