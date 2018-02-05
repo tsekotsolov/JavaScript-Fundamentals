@@ -46,7 +46,7 @@ function rest(roomsInput = [], guestsInput = []) {
       }
       if (!isAccomodated) {
         orphantGuests.add(firstGuest);
-          orphantGuests.add(secondGuest);
+        orphantGuests.add(secondGuest);
       }
 
     } else if (firstGuest.gender == secondGuest.gender) {
@@ -114,9 +114,7 @@ let isAccomodated = false;
     if(!isAccomodated){
       teaHouse.push(guest);
       }
-   
   }
-
 
   for (const [key, value] of [...rooms].sort()) {
     console.log(`Room number: ${key}`);
