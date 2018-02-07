@@ -4,7 +4,6 @@ function xml (input){
   const toAttrRegex = /\bto="([0-9A-Za-z.\s]+)"/gm;
   const fromAttrRegex = /\bfrom="([0-9A-Za-z.\s]+)"/gm;
   
-  
   let html='<article>\n';
 
   if (validMessage!=null) {
@@ -20,19 +19,17 @@ function xml (input){
         html+=`    <p>${paragraphs[i]}</p>\n`;
       }
        html+='  </div>\n</article>'
+
+       console.log(html);
     }
     else{
       console.log('Missing attributes');
-      return;
     }
   } 
-  
   else{
     console.log('Invalid message format');
-    return;
   }
 
-  console.log(html);
 }
 
 
