@@ -40,9 +40,6 @@ function xml (input){
 
 //xml('<message from="John Doe" to="Alice">Not much, just chillin. How about you?</message>');
 
-xml('<message to="Bob" from="Alice" timestamp="1497254114">Same old, same old\
-Let\'s go out for a beer</message>')
-
 //xml('<message to="Alice" from="Charlie"><img src="fox.jpg"/></message><meta version="2"/>');
 
 // xml('<message from="Alice" timestamp="1497254112">Same old, same old</message>');
