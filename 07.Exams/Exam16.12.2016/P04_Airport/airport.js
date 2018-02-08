@@ -1,8 +1,10 @@
 function airport(input = []) {
 
+  input = input.filter(e => e != '');
+
   let planesAtAirport = new Set();
   let citiesByPlanes = new Map();
-  let citiesByPassangers = new Map();
+  let citiesByPassengers = new Map();
 
   for (const plane of input) {
 
@@ -19,16 +21,15 @@ function airport(input = []) {
           citiesByPlanes.get(city).add(planeID);
         }
 
-        if (!citiesByPassangers.has(city)) {
-          citiesByPassangers.set(city, {
+        if (!citiesByPassengers.has(city)) {
+          citiesByPassengers.set(city, {
             Arrivals: 0,
             Departures: 0
           })
         }
 
-        currentArrivals = citiesByPassangers.get(city).Arrivals;
-
-        citiesByPassangers.get(city).Arrivals = currentArrivals + Number(passangersCount);
+        currentArrivals = citiesByPassengers.get(city).Arrivals;
+        citiesByPassengers.get(city).Arrivals = currentArrivals + Number(passangersCount);
 
       } else {
         continue;
@@ -47,23 +48,21 @@ function airport(input = []) {
           citiesByPlanes.get(city).add(planeID);
         }
 
-        if (!citiesByPassangers.has(city)) {
-          citiesByPassangers.set(city, {
+        if (!citiesByPassengers.has(city)) {
+          citiesByPassengers.set(city, {
             Arrivals: 0,
             Departures: 0
           })
         }
 
-        currentDepartures = citiesByPassangers.get(city).Departures;
-
-        citiesByPassangers.get(city).Departures = currentDepartures + Number(passangersCount);
+        currentDepartures = citiesByPassengers.get(city).Departures;
+        citiesByPassengers.get(city).Departures = currentDepartures + Number(passangersCount);
 
       }
 
     } else {
       continue;
     }
-
   }
 
   planesAtAirport = new Set([...planesAtAirport].sort((a, b) => {
@@ -85,27 +84,25 @@ function airport(input = []) {
     console.log(`- ${plane}`);
   }
 
-  
+  citiesByPassengers = new Map([...citiesByPassengers].sort((a, b) => {
 
- citiesByPassangers = new Map([...citiesByPassangers].sort((a, b) => {
-
-       if (b[1].Arrivals===a[1].Arrivals) {
-         return a[0].localeCompare(b[0]);
-       }
+    if (b[1].Arrivals === a[1].Arrivals) {
+      return a[0].localeCompare(b[0]);
+    }
     return b[1].Arrivals - a[1].Arrivals;
   }))
 
-  for (const [city,passengers] of citiesByPassangers ) {
-    
+  for (const [city, passengers] of citiesByPassengers) {
+
     console.log(city);
     console.log(`Arrivals: ${passengers.Arrivals}`);
     console.log(`Departures: ${passengers.Departures}`);
-    for (const [town,planes] of sortedCitiesByPlanes) {
-      if (city===town) {
-          console.log("Planes:");
-          for (const plane of planes) {
-            console.log(`-- ${plane}`);
-          }
+    for (const [town, planes] of sortedCitiesByPlanes) {
+      if (city === town) {
+        console.log("Planes:");
+        for (const plane of planes) {
+          console.log(`-- ${plane}`);
+        }
       }
     }
   }
@@ -119,6 +116,6 @@ function airport(input = []) {
 //   "ATR72 Madrid 135 depart",
 // ]);
 
-airport([ "Airbus Paris 356 land",
-"Airbus London 321 land", "Airbus Paris 213 depart", "Airbus Ljubljana 250 land"
+airport(["Airbus Paris 356 land",
+  "Airbus London 321 land", "Airbus Paris 213 depart", "Airbus Ljubljana 250 land"
 ]);
