@@ -29,6 +29,6 @@ console.log(`${(concrete.reduce((a,b)=>a+b))*1900} pesos`);
 
 //build(["21", "25", "28"]);
 
-//build([17]);
+build(["17"]);
 
 //build([17, 22, 17, 19, 17])
