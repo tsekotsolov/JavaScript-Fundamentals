@@ -1,7 +1,6 @@
 function spy(input = []) {
 
-  let pattern = `(\\s|^)(${input[0]}\\s+)([!%$#A-Z]{8,})([\\s.,]|$)`;
-  let regex = new RegExp(pattern, 'gi');
+  let regex = new RegExp(`(\\s|^)(${input[0]}\\s+)([!%$#A-Z]{8,})([\\s.,]|$)`, 'gi');
 
   for (let i = 1; i < input.length; i++) {
 
@@ -17,7 +16,6 @@ function spy(input = []) {
   }
  
   function decode(word) {
-
     let result = '';
     for (let char of word) {
       if (char === "!") {
