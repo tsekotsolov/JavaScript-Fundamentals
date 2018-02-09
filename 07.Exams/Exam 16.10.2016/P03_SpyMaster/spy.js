@@ -2,23 +2,21 @@ function spy(input = []) {
 
   let specialKey = input[0];
 
-  let pattern = `(?:^|\\s)(${specialKey}\\s+)([!%$#A-Z]{8,})(?:[\\s.,]|$)`;
+  let pattern = `( |^)(${specialKey}\\s+)([!%$#A-Z]{8,})( |\\.|,|$)`;
   let regex = new RegExp(pattern, 'gi');
 
   for (let i = 1; i < input.length; i++) {
 
     let currentString = input[i];
     while (match = regex.exec(currentString)) {
-      let foundWord = match[2];
+      let foundWord = match[3];
 
       if (foundWord !== foundWord.toUpperCase()) {
         continue;
       }
 
-    
-      input[i] = input[i].replace(foundWord,decode(foundWord));
+      input[i] = input[i].replace(match[0],match[1] + match[2] +decode(foundWord)+ match[4]);
 
-      
     }
     console.log(input[i]);
   }
@@ -40,14 +38,11 @@ function spy(input = []) {
       else if (char === "$") {
         result += "4"
       }
-      else if(char===char.toUpperCase()){
-         result +=char.toLowerCase();
-      }
       else {
         result += char;
       }
     }
-    return(result);
+    return(result.toLowerCase());
   }
 }
 
